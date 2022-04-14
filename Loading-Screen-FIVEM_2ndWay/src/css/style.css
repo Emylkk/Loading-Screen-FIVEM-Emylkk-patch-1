@@ -1,0 +1,278 @@
+/*@Emylkk*/
+
+* {
+    margin: 0px;
+    user-select: none;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+body {
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+}
+
+header {
+    height: 15%;
+    width: 100%;
+    background-image: linear-gradient(white, grey);
+    display: flex;
+}
+
+section {
+    display: flex;
+    justify-content: space-around;
+    color: transparent;
+    height: 70%;
+    width: 100%;
+    background-image: none;
+    background-color: grey;
+    font-family: 'Alfa-SLAB';
+    text-align: center;
+    font-size: 30vh;
+}
+
+#logotipo {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+    align-self: center;
+}
+
+#logotipo h1 {
+    background-color: black;
+    margin-top: auto;
+    background-image: url(../img/panoRAMICA.jpg);
+    background-size: 200% 200%;
+    background-position: 0% 100%;
+    width: 40vh;
+    height: 40vh;
+    font-size: 40vh;
+    margin-left: -16vh;
+    margin-top: -20vh;
+    position: absolute;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: load 40s infinite ease-in-out;
+}
+
+#logotipo p {
+    padding-top: 20vh;
+    color: White;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2vh;
+}
+
+footer {
+    height: 15%;
+    width: 100%;
+    background-image: linear-gradient(Grey, white);
+}
+
+.circulos {
+    display: flex;
+    max-height: 15vh;
+    max-width: 15vh;
+    position: relative;
+    margin-left: 1vw;
+    vertical-align: middle;
+}
+
+.circulos-fundo {
+    display: flex;
+    height: 15vh;
+    width: 15vh;
+    border-radius: 100px;
+    background-image: linear-gradient(40deg, white, black, black);
+    align-items: center;
+    position: absolute;
+    left: 0vh;
+    top: 0vh;
+    animation: circulo-spin 5s linear infinite;
+}
+
+.circulos-centro {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 14vh;
+    width: 14vh;
+    border-radius: 100px;
+    background-image: linear-gradient(45deg, white, rgba(1, 1, 1, 0.2));
+    position: absolute;
+    left: 0.5vh;
+    top: 0.5vh;
+}
+
+header img {
+    align-self: center;
+    margin-left: 1vw;
+    height: 12vh;
+    width: 12vh;
+}
+
+h2 {
+    margin-left: 3vw;
+    transform: skew(30deg);
+    color: white;
+    text-shadow: black 2px 2px;
+    border-width: 0px 0px 2px 0px;
+    border-color: white;
+    border-style: double;
+    width: fit-content;
+    margin-bottom: 0.5vh;
+    font-size: 2vh;
+}
+
+#descricao {
+    margin: 1vh;
+    background-color: rgba(10, 10, 10, 0.3);
+    border-width: 1vh;
+    margin-left: 65vw;
+    transform: skew(-30deg);
+    align-self: center;
+}
+
+#teclas {
+    font-weight: 700;
+    margin: 0vw 7vw;
+    font-size: medium;
+    transform: skew(30deg);
+    color: white;
+}
+
+@keyframes texticulo {
+    0% {
+        visibility: visible;
+        font-size: 20vh;
+    }
+    12.5% {
+        opacity: 0%;
+        font-size: 30vh;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 0%;
+    }
+}
+
+@keyframes load {
+    0% {
+        background-position: 0% 50%;
+    }
+    45% {
+        background-position: 100% 50%;
+    }
+    55% {
+        background-position: 100% 100%;
+    }
+    80% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes circulo-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@font-face {
+    font-family: Dock51;
+    src: url(../fonts/dock_51.ttf);
+}
+
+@keyframes Texto {
+    0% {
+        visibility: visible;
+        opacity: 100%;
+        transform: scaleY(0.1);
+    }
+    12.5% {
+        opacity: 0%;
+    }
+    100% {
+        transform: scaleY(1);
+        opacity: 0%;
+    }
+}
+
+#cursor {
+    z-index: 100;
+    pointer-events: none;
+    position: absolute;
+}
+
+#Modo:checked~section {
+    background-color: black;
+    background: black;
+}
+
+#Modo:not(:checked)~section {
+    background-color: grey;
+    background: grey;
+}
+
+#Modo:checked~header {
+    background-color: azure;
+    background-image: linear-gradient(rgba(1, 1, 1, 0.9), rgba(1, 1, 1, 0.7));
+}
+
+#Modo:checked~footer {
+    background-color: azure;
+    background-image: linear-gradient(rgba(1, 1, 1, 0.7), rgba(1, 1, 1, 0.9));
+}
+
+#Modo {
+    right: 0px;
+    position: fixed;
+    -webkit-appearance: none;
+    border-style: none;
+    border-width: 0px;
+    user-select: none;
+    outline: none;
+    padding: 2vh;
+    font-size: large;
+}
+
+#Modo::before {
+    content: attr(title);
+}
+
+#txtT {
+    animation: Texto 8s 1s linear infinite;
+}
+
+#txtI {
+    animation: Texto 8s 2s linear infinite;
+}
+
+#txtTo {
+    animation: Texto 8s 3s linear infinite;
+}
+
+#txtA {
+    animation: Texto 8s 4s linear infinite;
+}
+
+#txtN {
+    animation: Texto 8s 5s linear infinite;
+}
+
+#txtIo {
+    animation: Texto 8s 6s linear infinite;
+}
+
+#txtU {
+    animation: Texto 8s 7s linear infinite;
+}
+
+#txtM {
+    animation: Texto 8s 8s linear infinite;
+}
